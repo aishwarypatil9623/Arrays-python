@@ -1,37 +1,21 @@
-#include<iostream>
-  using namespace std;
+def search(arr, n):
+    temp = -1
 
-void Search(int a[], int n) {
-  int temp = -1;
+    for i in range(len(arr)):
+        if arr[i] == n:
+            print(f"Element found at position: {i + 1}")
+            temp = 0
+            break
 
-  for (int i = 0; i < 5; i++) {
-    if (a[i] == n) {
-      cout << "Element found at position: " << i + 1 << endl;
-      temp = 0;
-      break;
-    }
-  }
+    if temp == -1:
+        print("No Element Found")
 
-  if (temp == -1) {
-    cout << "No Element Found" << endl;
-  }
+arr = []
+n = int(input("Enter number of elements: "))
 
-}
+for i in range(n):
+    element = int(input(f"Enter the element {i + 1}: "))
+    arr.append(element)
 
-int main() {
-  int arr[50];
-  int n;
-  cout<<"Enter number of elements";
-  cin>>n;
-  cout << "Please enter elements of the Array" << endl;
-  for (int i = 0; i < n; i++) {
-    cin >> arr[i];
-  }
-  cout << "Please enter an element to search" << endl;
-  int num;
-  cin >> num;
-
-  Search(arr, num);
-
-  return 0;
-}
+num = int(input("Please enter an element to search: "))
+search(arr, num)
